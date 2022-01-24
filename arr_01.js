@@ -1,5 +1,28 @@
 /*********   Theorie **********/
 
+// push() / pop ()
+
+//push() --> Daten rein (+)
+let arr = [];
+output(arr);
+arr.push("Ich");
+output(arr);
+arr.push("bin");
+output(arr);
+arr.push("Max");
+output(arr);
+
+// pop() --> Daten raus (-)
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+output(arr.pop());
+output(arr);
+
+
+
+
 
 /*
 Aufgabe:
@@ -22,20 +45,30 @@ function getHTML() {
     let htmlStr = "";
 
     for (let i = 0; i < tags.length; i++) {
-        htmlStr += getElement(tags[i],"open");
-        // htmlStr += getElement(tags[i],"close");
-
-    //    htmlStr += "<" + tags[i] + ">";
-    //    htmlStr += "</" + tags[i] + ">";
+        if (isOpenElement(tags[i])) {
+            htmlStr += getElement(tags[i],"open")
+        } else {
+            htmlStr += getElement(tags[i],"close");
+        }
     }
-
     return htmlStr;
 }
 
+function isOpenElement(tag) {
+//     if () {
+//         return true;
+//     } else {
+//         return false;
+//     }
+    
+// }
+  return true;
+}
+
 // Modul Zusammenbau der Elements: <tagStr>
-output(getElement(tags[1],"open"));
-output(getElement(tags[1],"close"));
-output(getElement(tags[1]));
+// output(getElement(tags[1],"open"));
+// output(getElement(tags[1],"close"));
+// output(getElement(tags[1]));
 function getElement(tag,op) {
 
     // switch (op) {
