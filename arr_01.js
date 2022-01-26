@@ -32,6 +32,7 @@ einer HTML-Seite ausgibt:
 Verwenden Sie dafür die untenstehenden Arrays
 */
 
+const cobj     = {open_o:"<",close_o:"</",close:">"};
 const controls = ["<", "</", ">"];
 const tags = [  "html","head","head","body",
 
@@ -89,25 +90,27 @@ function isOpenElement(tag) {
 // output(getElement(tags[1]));
 function getElement(tag,op) {
 
-    // switch (op) {
-    //     case "open":
-    //         return controls[0] + tag + controls[2];
-    //     case "close":
-    //         return controls[1] + tag + controls[2];
-    //     default:
-    //        return "?";
-    // }
-    if (op == "open") {
-        return controls[0] + tag + controls[2];
-    } 
-    else if(op == "close")
-    {
-        return controls[1] + tag + controls[2];
+    switch (op) {
+        case "open":
+            // return controls[0] + tag + controls[2];
+            return cobj.open_o + tag + cobj.close;
+        case "close":
+            // return controls[1] + tag + controls[2];
+            return cobj.close_o + tag + cobj.close;
+        default:
+           return "?";
     }
-    else {
-        return "?";
-    }
-}
+//     if (op == "open") {
+//         return controls[0] + tag + controls[2];
+//     } 
+//     else if(op == "close")
+//     {
+//         return controls[1] + tag + controls[2];
+//     }
+//     else {
+//         return "?";
+//     }
+// }
 // Modul: Ausgabe | Test
 //output("hi");
 function output(outputData) {
